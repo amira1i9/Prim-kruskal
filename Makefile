@@ -1,18 +1,18 @@
 CXX := g++
 CXXFLAGS := -Wall -Wextra -Werror -Wextra -pedantic -std=c++23 -O3 -march=native
 
-TAREGET := main
+TARGET := main
 
 SRC := src/main.cpp src/utils.cpp src/disjoint_set.cpp
 OBJ := $(SRC:.cpp=.o)
 
-all: $(TAREGET)
+all: $(TARGET)
 
-$(TAREGET): $(OBJ)
+$(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(TAREGET) $(OBJ)
+	rm -f $(TARGET) $(OBJ)
